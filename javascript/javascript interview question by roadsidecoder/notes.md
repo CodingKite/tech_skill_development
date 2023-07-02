@@ -1,0 +1,3 @@
+- var exisited since the begining of JS.
+- let, const were introduced in ES6.
+- Scope is the region in which 

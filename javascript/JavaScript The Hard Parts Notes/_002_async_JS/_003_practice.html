@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function display(data) {
+      console.log("display func => ", data);
+      data.hello = "World"
+      return data // to chain them together return the data 
+    }
+
+    function second_display(data) {
+      console.log("second_display 222 func => ", data);
+    }
+
+
+    function third_display(data) {
+      console.log("third_display 222 func => ", data);
+    }
+
+    function error(err){
+      console.log("error  func => ", err);
+    };
+
+    const futureData = fetch('https://jsonplaceholder.typicode.com/posts/1');
+    futureData.resolve({"check":"yes"})
+    futureData.then(display).then(second_display).then(third_display).catch(error);
+
+    //  we can futureData.resolve() to set the status to 'resolved' and data is set to value passed in the resolved() function  and then trigger the function in the hidden propery array 
+    // futureData.then(display);
+    // futureData.then(second_display);
+    // futureData.then(third_display);
+    // futureData.catch(error);
+
+    console.log("me first =>> ");
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

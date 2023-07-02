@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function createUser(name, score) {
+      const newUser = Object.create(userFunctions);
+      newUser.name = name;
+      newUser.score = score;
+      return newUser;
+    };
+
+
+    const userFunctions = {
+      increment: function () { this.score++ },
+      login: function () { console.log("Logged Inn") }
+    };
+
+    const user1 = createUser('will', 7);
+    const user2 = createUser('timm', 11);
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

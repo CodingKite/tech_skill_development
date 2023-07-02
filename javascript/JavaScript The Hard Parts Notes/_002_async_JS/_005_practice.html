@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function display(data) {
+      console.log("display func => ", data);
+      data.hello = "World";
+      return data; // to chain them together, return the data 
+    }
+
+    function second_display(data) {
+      console.log("second_display 222 func => ", data);
+    }
+
+    function third_display(data) {
+      console.log("third_display 222 func => ", data);
+    }
+
+    function errorDisplay(err) {
+      console.log("error in display func => ", err);
+    }
+
+    function errorSecond(err) {
+      console.log("error in second_display func => ", err);
+    }
+
+    function errorThird(err) {
+      console.log("error in third_display func => ", err);
+    }
+
+    fetch('https://jsonplaceholder.typicode.com/posts/1')
+      .then(display, errorDisplay)
+      .then(second_display, errorSecond)
+      .then(third_display, errorThird);
+
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

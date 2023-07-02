@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function userCreator(name, score) {
+      const newUser = {};
+      newUser.name = name;
+      newUser.score = score;
+      newUser.increment = function () { // this function has two Scopes (Global and Closure)
+        newUser.score++;
+      }
+      return newUser;
+    }
+
+    const user1 = userCreator("Will", 3);
+    const user2 = userCreator("Tim", 5);
+
+    user1.increment(); //accesses newUser.score from the backpack of data it got/carried with itself when returned from when invoking userCreator function.
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
